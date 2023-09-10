@@ -1,4 +1,12 @@
 #include "mmath.h"
-int add(int a, int b) {
-  return a + b;
+namespace mmath {
+namespace {
+unsigned bits(float f) {
+  return *((unsigned *)((void *)(&f)));
 }
+float from_bits(unsigned b) {
+  return *((float *)((void *)(&b)));
+}
+} // namespace
+
+} // namespace mmath
